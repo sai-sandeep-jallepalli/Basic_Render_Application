@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: Basic_Render_Application
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn src.app:app
+    envVars:
+      - key: PORT
+        value: 5000
+    plan: free
